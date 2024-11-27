@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url(../fonts/KumbhSans-VariableFont.ttf) format('truetype');
+}
+:root {
+    --font-family: 'Kumbh Sans', sans-serif;
+
+    --nav-font-size: clamp(0.9375rem, 1.1910211267605635rem + -0.2816901408450704vw, 1.125rem);
+
+    --nav-text-mobile-color: #1d2026;
+    --nav-mobile-font-weight: 700;
+    --nav-text-desktop-color: #69707d;
+    --nav-desktop-font-weight: 400;
+
+    --product-primary-color: var(--nav-text-desktop-color);
+    --product-secondary-color: var(--nav-text-mobile-color);
+    --product-detail-padding: 1.5rem clamp(1.5rem, -1.602112676056338rem + 13.235680751173708vw, 10.31rem);
+    --product-h2-font-size: clamp(0.75rem, 0.7279929577464789rem + 0.09389671361502347vw, 0.8125rem);
+    --product-h1-font-size: clamp(1.75rem, 1.397887323943662rem + 1.5023474178403755vw, 2.75rem);
+    --product-h1-margin: clamp(1rem, 0.823943661971831rem + 0.7511737089201878vw, 1.5rem) 0 clamp(1rem, 0.647887323943662rem + 1.5023474178403755vw, 2rem);
+    --product-p-font-size: clamp(0.9375rem, 0.9154929577464789rem + 0.09389671361502347vw, 1rem);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--font-family);
+    background-color: #fff;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    width: calc(100% - 66.7%);
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 2;
+}
+.lightbox {
+    display: none;
+}
+
+
+@media screen and (min-width: 920px) {
+    main {
+        max-width: 90rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    .main-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 5.63rem 0 8.25rem;
+    }
+
+    .lightbox {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+    }
+    .close-lightbox {
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+    .close-lightbox:hover svg path {
+        fill: #ff7e1b;
+    }
+    .lightbox .product-image-display {
+        width: 34.375rem;
+    }
+    .lightbox .product-image img {
+        max-width: 100%;
+        margin-top: 2%;
+    }
+    .lightbox .product-thumbnails {
+        width: 90%;
+        margin: 2.5rem auto 0;
+    }
+
+    #desktop-prev-arrow, #desktop-next-arrow {
+        display: flex;
+    }
+    #desktop-prev-arrow {
+        left: calc(-1 * (3.5rem / 2));
+    }
+    #desktop-next-arrow {
+        right: calc(-1 * (3.5rem / 2));
+    }
+}
